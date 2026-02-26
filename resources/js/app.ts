@@ -1,3 +1,8 @@
+/**
+ * Copyright (c) 2026 Owencodes
+ * Part of Hackerinn. See LICENSE file.
+ */
+
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import type { DefineComponent } from 'vue';

@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * Copyright (c) 2026 Owencodes
+ * Part of Hackerinn. See LICENSE file.
+ */
+
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Laravel\Fortify\Features;
