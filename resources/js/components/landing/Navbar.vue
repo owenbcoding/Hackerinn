@@ -13,12 +13,12 @@ const open = ref(false);
 
 <template>
     <header
-        class="sticky top-0 z-50 border-b border-border bg-background/80 backdrop-blur"
+        class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md"
     >
-        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 sm:gap-8 lg:px-8">
             <Link
                 :href="home().url"
-                class="flex shrink-0 items-center gap-2 font-bold"
+                class="flex shrink-0 items-center gap-2 font-bold text-foreground"
             >
                 <span
                     class="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground"
@@ -28,7 +28,7 @@ const open = ref(false);
                 <span>HackerInn</span>
             </Link>
 
-            <nav class="absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 md:flex">
+            <nav class="hidden flex-1 items-center justify-center gap-10 lg:flex">
                 <a
                     href="#features"
                     class="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -49,7 +49,7 @@ const open = ref(false);
                 </a>
             </nav>
 
-            <div class="hidden shrink-0 md:block">
+            <div class="hidden shrink-0 lg:flex lg:items-center">
                 <Link
                     v-if="auth?.user"
                     :href="dashboard().url"
@@ -70,7 +70,7 @@ const open = ref(false);
 
             <button
                 type="button"
-                class="flex h-9 w-9 items-center justify-center rounded-md md:hidden"
+                class="flex h-9 w-9 items-center justify-center rounded-md lg:hidden"
                 aria-label="Toggle menu"
                 @click="open = !open"
             >
@@ -81,7 +81,7 @@ const open = ref(false);
 
         <div
             v-show="open"
-            class="border-t border-border px-6 py-4 md:hidden"
+            class="border-t border-border px-6 py-5 lg:hidden"
         >
             <nav class="flex flex-col gap-4">
                 <a
