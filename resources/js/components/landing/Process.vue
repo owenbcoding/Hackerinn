@@ -57,7 +57,7 @@ const steps = [
                     />
                 </div>
 
-                <div class="flex flex-col gap-0 lg:pt-16">
+                <div class="flex flex-col gap-0 lg:pt-28">
                     <div
                         v-for="(step, i) in steps"
                         :key="step.number"
