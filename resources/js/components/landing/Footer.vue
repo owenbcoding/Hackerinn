@@ -21,7 +21,7 @@ import { home } from '@/routes';
                         HackerInn
                     </Link>
                     <p class="mt-3 text-sm text-muted-foreground">
-                        Your home base for building. Focus, track, ship.
+                        Just builders, building.
                     </p>
                 </div>
 
