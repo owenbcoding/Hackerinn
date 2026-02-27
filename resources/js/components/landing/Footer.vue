@@ -1,22 +1,21 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
-import { Terminal } from 'lucide-vue-next';
 import { home } from '@/routes';
 </script>
 
 <template>
     <footer class="border-t border-border">
         <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-            <div class="grid gap-12 sm:grid-cols-3">
-                <div>
+            <div class="flex flex-col items-center gap-10 sm:flex-row sm:items-center sm:justify-between lg:gap-0">
+                <div class="flex shrink-0 flex-col sm:items-start">
                     <Link
                         :href="home().url"
-                        class="flex items-center gap-2 font-bold"
+                        class="flex items-center gap-2 font-bold text-foreground"
                     >
                         <span
-                            class="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground"
+                            class="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-xl font-bold text-primary-foreground"
                         >
-                            <Terminal class="h-4 w-4" />
+                            &gt;
                         </span>
                         HackerInn
                     </Link>
@@ -25,7 +24,7 @@ import { home } from '@/routes';
                     </p>
                 </div>
 
-                <nav class="flex flex-col gap-3">
+                <nav class="flex items-center gap-8">
                     <a
                         href="#features"
                         class="text-sm text-muted-foreground transition-colors hover:text-foreground"
@@ -44,15 +43,9 @@ import { home } from '@/routes';
                     >
                         Builders
                     </a>
-                    <a
-                        href="#waitlist"
-                        class="text-sm text-muted-foreground transition-colors hover:text-foreground"
-                    >
-                        Join Waitlist
-                    </a>
                 </nav>
 
-                <div class="flex gap-3">
+                <div class="flex shrink-0 gap-3">
                     <a
                         href="https://github.com"
                         target="_blank"

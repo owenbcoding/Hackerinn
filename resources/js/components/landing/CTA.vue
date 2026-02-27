@@ -56,7 +56,7 @@ function handleSubmit(e: Event) {
                     v-model="email"
                     type="email"
                     required
-                    placeholder="you@builder.dev"
+                    placeholder="Working on it . . ."
                     class="flex-1 rounded-md border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
                 />
                 <button

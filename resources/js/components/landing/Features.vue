@@ -57,7 +57,7 @@ const features = [
 <template>
     <section
         id="features"
-        class="px-6 py-24 lg:px-8 lg:py-32"
+        class="px-6 lg:px-8"
     >
         <div class="mx-auto max-w-7xl">
             <div class="text-center">
@@ -74,7 +74,7 @@ const features = [
                 </p>
             </div>
 
-            <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div
                     v-for="feature in features"
                     :key="feature.label"

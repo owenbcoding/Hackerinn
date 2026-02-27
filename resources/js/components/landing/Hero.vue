@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-    <section class="relative px-6 py-24 lg:px-8 lg:py-32">
+    <section class="relative px-6 py-24 lg:px-8">
         <div
             class="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
         />
@@ -64,7 +64,7 @@ defineProps<{
             </div>
 
             <div
-                class="mt-16 flex flex-col items-center justify-center gap-8 border-t border-border pt-8 sm:flex-row sm:gap-12 lg:gap-16"
+                class="mt-10 flex flex-col items-center justify-center gap-8 border-t border-border pt-10 sm:flex-row sm:gap-12 lg:gap-16"
             >
                 <div class="text-center">
                     <div
