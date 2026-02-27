@@ -170,3 +170,40 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* HackerInn landing page – dark theme only */
+.hackerinn-landing {
+    --background: #0a0a0a;
+    --foreground: #fafafa;
+    --card: #0a0a0a;
+    --card-foreground: #fafafa;
+    --primary: #00d97e;
+    --primary-foreground: #0a0a0a;
+    --secondary: #1a1a1a;
+    --secondary-foreground: #fafafa;
+    --muted: #1a1a1a;
+    --muted-foreground: #888888;
+    --border: #262626;
+    --input: #1a1a1a;
+    --ring: #00d97e;
+    --popover: #0a0a0a;
+    --popover-foreground: #fafafa;
+    --accent: #1a1a1a;
+    --accent-foreground: #fafafa;
+    --destructive: #ef4444;
+    --destructive-foreground: #fafafa;
+}
+
+.hackerinn-landing {
+    @apply bg-background text-foreground;
+    font-family: 'Geist', 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+}
+
+.hackerinn-landing .font-mono {
+    font-family: 'Geist Mono', ui-monospace, monospace;
+}
+
+/* Force dark background for landing page */
+html:has(.hackerinn-landing) {
+    background-color: #0a0a0a;
+}
