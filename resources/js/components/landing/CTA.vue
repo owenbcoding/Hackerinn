@@ -16,7 +16,7 @@ function handleSubmit(e: Event) {
 <template>
     <section
         id="waitlist"
-        class="relative px-6 py-24 lg:px-8 lg:py-32"
+        class="relative scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32 px-6 py-24 lg:px-8 lg:py-32"
     >
         <div
             class="absolute left-1/2 top-1/2 h-[400px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-3xl"

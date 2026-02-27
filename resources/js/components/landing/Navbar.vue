@@ -15,7 +15,7 @@ const open = ref(false);
     <header
         class="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md"
     >
-        <div class="mx-auto flex max-w-7xl items-center justify-between gap-6 px-6 py-5 sm:gap-8 lg:px-8">
+        <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-4 sm:gap-6 lg:gap-8 lg:px-8 lg:py-5">
             <Link
                 :href="home().url"
                 class="flex shrink-0 items-center gap-2 font-bold text-foreground"

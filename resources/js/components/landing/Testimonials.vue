@@ -27,7 +27,7 @@ const testimonials = [
 <template>
     <section
         id="builders"
-        class="px-6 lg:px-8"
+        class="scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32 px-6 py-24 lg:px-8 lg:py-32"
     >
         <div class="mx-auto max-w-7xl">
             <div class="text-center">

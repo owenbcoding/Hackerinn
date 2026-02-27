@@ -30,7 +30,7 @@ const steps = [
 <template>
     <section
         id="how-it-works"
-        class="px-6 py-24 lg:px-8 lg:py-32"
+        class="scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32 px-6 py-24 lg:px-8 lg:py-32"
     >
         <div class="mx-auto max-w-7xl">
             <div class="grid gap-16 lg:grid-cols-2">

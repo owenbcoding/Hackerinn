@@ -7,7 +7,7 @@ import { home } from '@/routes';
     <footer class="border-t border-border">
         <div class="mx-auto max-w-7xl px-6 py-16 lg:px-8">
             <div class="flex flex-col items-center gap-10 sm:flex-row sm:items-center sm:justify-between lg:gap-0">
-                <div class="flex shrink-0 flex-col sm:items-start">
+                <div class="flex shrink-0 flex-col items-center sm:items-start text-center sm:text-left">
                     <Link
                         :href="home().url"
                         class="flex items-center gap-2 font-bold text-foreground"
@@ -24,7 +24,7 @@ import { home } from '@/routes';
                     </p>
                 </div>
 
-                <nav class="flex items-center gap-8">
+                <nav class="flex flex-wrap items-center justify-center gap-5 sm:justify-start sm:gap-8">
                     <a
                         href="#features"
                         class="text-sm text-muted-foreground transition-colors hover:text-foreground"

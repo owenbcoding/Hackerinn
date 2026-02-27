@@ -10,7 +10,7 @@ defineProps<{
 </script>
 
 <template>
-    <section class="relative px-6 py-24 lg:px-8">
+    <section class="relative px-6 py-20 sm:py-24 lg:px-8 lg:py-32">
         <div
             class="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
         />
