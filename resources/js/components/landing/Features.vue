@@ -60,26 +60,25 @@ const features = [
         class="px-6 py-24 lg:px-8 lg:py-32"
     >
         <div class="mx-auto max-w-7xl">
-            <span
-                class="rounded-sm bg-primary px-3 py-1 font-mono text-xs font-semibold text-primary-foreground tracking-wide"
-            >
-                FEATURES
-            </span>
-            <h2 class="mt-4 text-4xl font-bold sm:text-5xl">
-                Built for builders
-            </h2>
-            <p class="mt-4 max-w-2xl text-muted-foreground">
-                Everything you need to stay accountable. Nothing you don't.
-            </p>
+            <div class="text-center">
+                <span
+                    class="inline-block rounded-sm bg-primary px-3 py-1 font-mono text-xs font-semibold text-primary-foreground tracking-wide"
+                >
+                    FEATURES
+                </span>
+                <h2 class="mt-4 text-4xl font-bold sm:text-5xl">
+                    Built for builders
+                </h2>
+                <p class="mx-auto mt-4 max-w-2xl text-muted-foreground">
+                    Everything you need to stay accountable. Nothing you don't.
+                </p>
+            </div>
 
             <div class="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 <div
                     v-for="feature in features"
                     :key="feature.label"
-                    :class="[
-                        'rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/30 lg:p-8',
-                        feature.label === 'MINIMAL' && 'lg:col-span-2',
-                    ]"
+                    class="rounded-lg border border-border bg-card p-6 transition-colors hover:border-primary/30 lg:p-8"
                 >
                     <div class="flex items-start justify-between">
                         <span
