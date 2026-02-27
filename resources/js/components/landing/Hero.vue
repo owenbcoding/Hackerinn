@@ -12,11 +12,11 @@ defineProps<{
 <template>
     <section class="relative px-6 py-24 lg:px-8 lg:py-32">
         <div
-            class="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/5 blur-3xl"
+            class="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 rounded-full bg-primary/10 blur-3xl"
         />
 
-        <div class="relative mx-auto max-w-7xl">
-            <div class="mb-8 flex items-center gap-3">
+        <div class="relative mx-auto max-w-7xl text-center">
+            <div class="mb-8 flex items-center justify-center gap-3">
                 <span
                     class="rounded-sm bg-primary px-3 py-1 font-mono text-xs font-semibold text-primary-foreground tracking-wide"
                 >
@@ -32,12 +32,12 @@ defineProps<{
                 <span class="text-primary">for building.</span>
             </h1>
 
-            <p class="mt-6 max-w-xl text-lg text-muted-foreground">
+            <p class="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
                 Check in. Work with intent. Track real progress. No endless feeds.
                 No fake productivity. Just builders, building.
             </p>
 
-            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link
                     v-if="auth?.user"
                     :href="dashboard().url"
@@ -64,9 +64,9 @@ defineProps<{
             </div>
 
             <div
-                class="mt-16 flex flex-col gap-8 border-t border-border pt-8 sm:flex-row sm:gap-12 lg:gap-16"
+                class="mt-16 flex flex-col items-center justify-center gap-8 border-t border-border pt-8 sm:flex-row sm:gap-12 lg:gap-16"
             >
-                <div>
+                <div class="text-center">
                     <div
                         class="font-mono text-3xl font-bold text-primary sm:text-4xl"
                     >
@@ -75,10 +75,10 @@ defineProps<{
                     <div
                         class="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground"
                     >
-                        Builders waiting
+                        Builders Waiting
                     </div>
                 </div>
-                <div>
+                <div class="text-center">
                     <div
                         class="font-mono text-3xl font-bold text-primary sm:text-4xl"
                     >
@@ -87,10 +87,10 @@ defineProps<{
                     <div
                         class="mt-1 font-mono text-xs uppercase tracking-widest text-muted-foreground"
                     >
-                        Ship rate
+                        Ship Rate
                     </div>
                 </div>
-                <div>
+                <div class="text-center">
                     <div
                         class="font-mono text-3xl font-bold text-foreground sm:text-4xl"
                     >
