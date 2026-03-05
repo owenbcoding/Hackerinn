@@ -1,21 +1,51 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
+import { router, usePage } from '@inertiajs/vue3';
 import { CheckCircle2 } from 'lucide-vue-next';
+import { store } from '@/routes/newsletter';
 
 const email = ref('');
 const submitted = ref(false);
+const error = ref('');
+const loading = ref(false);
+
+const page = usePage();
+watch(
+    () => (page.props.flash as { newsletter_success?: boolean; newsletter_error?: string } | undefined)?.newsletter_success,
+    (success) => {
+        if (success) {
+            submitted.value = true;
+            error.value = '';
+        }
+    },
+    { immediate: true },
+);
+watch(
+    () => (page.props.flash as { newsletter_success?: boolean; newsletter_error?: string } | undefined)?.newsletter_error,
+    (msg) => {
+        if (msg) error.value = msg;
+    },
+    { immediate: true },
+);
 
 function handleSubmit(e: Event) {
     e.preventDefault();
-    if (email.value.trim()) {
-        submitted.value = true;
-    }
+    error.value = '';
+    if (!email.value.trim()) return;
+    loading.value = true;
+    router.post(store.url(), { email: email.value.trim() }, {
+        preserveScroll: true,
+        onFinish: () => { loading.value = false; },
+        onError: (errors) => {
+            error.value = (errors as { email?: string[] })?.email?.[0] ?? 'Something went wrong. Please try again.';
+        },
+    });
 }
 </script>
 
 <template>
     <section
-        id="waitlist"
+        id="newsletter"
         class="relative scroll-mt-24 sm:scroll-mt-28 lg:scroll-mt-32 px-6 py-24 lg:px-8 lg:py-32"
     >
         <div
@@ -52,18 +82,25 @@ function handleSubmit(e: Event) {
                 class="mx-auto mt-8 flex max-w-md flex-col gap-4 sm:flex-row"
                 @submit="handleSubmit"
             >
-                <input
-                    v-model="email"
-                    type="email"
-                    required
-                    placeholder="Working on it . . ."
-                    class="flex-1 rounded-md border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
-                />
+                <div class="flex flex-1 flex-col gap-1">
+                    <input
+                        v-model="email"
+                        type="email"
+                        required
+                        placeholder="you@example.com"
+                        class="rounded-md border border-border bg-input px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20"
+                        :disabled="loading"
+                    />
+                    <p v-if="error" class="text-sm text-destructive">
+                        {{ error }}
+                    </p>
+                </div>
                 <button
                     type="submit"
-                    class="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+                    class="rounded-md bg-primary px-6 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90 disabled:opacity-70"
+                    :disabled="loading"
                 >
-                    Join Waitlist
+                    {{ loading ? 'Joining…' : 'Join Waitlist' }}
                 </button>
             </form>
 
