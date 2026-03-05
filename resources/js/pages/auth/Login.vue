@@ -28,13 +28,14 @@ defineProps<{
 
         <div
             v-if="status"
-            class="mb-4 text-center text-sm font-medium text-green-600"
+            class="mb-4 text-center text-sm font-medium text-primary"
         >
             {{ status }}
         </div>
 
         <Form
-            v-bind="store.form()"
+            :action="store.url()"
+            method="post"
             :reset-on-success="['password']"
             v-slot="{ errors, processing }"
             class="flex flex-col gap-6"
@@ -61,7 +62,7 @@ defineProps<{
                         <TextLink
                             v-if="canResetPassword"
                             :href="request()"
-                            class="text-sm"
+                            class="text-sm text-primary underline decoration-primary/50 underline-offset-4 hover:decoration-primary"
                             :tabindex="5"
                         >
                             Forgot password?
@@ -88,7 +89,7 @@ defineProps<{
 
                 <Button
                     type="submit"
-                    class="mt-4 w-full"
+                    class="mt-4 w-full bg-primary text-primary-foreground hover:bg-primary/90"
                     :tabindex="4"
                     :disabled="processing"
                     data-test="login-button"
@@ -103,7 +104,12 @@ defineProps<{
                 v-if="canRegister"
             >
                 Don't have an account?
-                <TextLink :href="register()" :tabindex="5">Sign up</TextLink>
+                <TextLink
+                    :href="register()"
+                    :tabindex="5"
+                    class="text-primary underline decoration-primary/50 underline-offset-4 hover:decoration-primary"
+                    >Sign up</TextLink
+                >
             </div>
         </Form>
     </AuthBase>
