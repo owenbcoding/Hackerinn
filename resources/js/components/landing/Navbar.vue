@@ -2,7 +2,7 @@
 import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import { ArrowRight, Menu, Terminal, X } from 'lucide-vue-next';
-import { dashboard, home, register } from '@/routes';
+import { home } from '@/routes';
 
 defineProps<{
     auth?: { user?: unknown };
@@ -50,22 +50,13 @@ const open = ref(false);
             </nav>
 
             <div class="hidden shrink-0 lg:flex lg:items-center">
-                <Link
-                    v-if="auth?.user"
-                    :href="dashboard().url"
-                    class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                    Dashboard
-                    <ArrowRight class="h-4 w-4" />
-                </Link>
-                <Link
-                    v-else
-                    :href="canRegister ? register().url : '#waitlist'"
+                <a
+                    href="#newsletter"
                     class="inline-flex items-center gap-2 rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                     Join Waitlist
                     <ArrowRight class="h-4 w-4" />
-                </Link>
+                </a>
             </div>
 
             <button
@@ -105,24 +96,14 @@ const open = ref(false);
                 >
                     Builders
                 </a>
-                <Link
-                    v-if="auth?.user"
-                    :href="dashboard().url"
-                    class="inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
-                    @click="open = false"
-                >
-                    Dashboard
-                    <ArrowRight class="h-4 w-4" />
-                </Link>
-                <Link
-                    v-else
-                    :href="canRegister ? register().url : '#waitlist'"
+                <a
+                    href="#newsletter"
                     class="inline-flex w-fit items-center gap-2 rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
                     @click="open = false"
                 >
                     Join Waitlist
                     <ArrowRight class="h-4 w-4" />
-                </Link>
+                </a>
             </nav>
         </div>
     </header>
