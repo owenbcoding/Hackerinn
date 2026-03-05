@@ -1,12 +1,5 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
 import { ArrowRight, ChevronRight } from 'lucide-vue-next';
-import { dashboard, register } from '@/routes';
-
-defineProps<{
-    auth?: { user?: unknown };
-    canRegister: boolean;
-}>();
 </script>
 
 <template>
@@ -38,22 +31,13 @@ defineProps<{
             </p>
 
             <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                <Link
-                    v-if="auth?.user"
-                    :href="dashboard().url"
-                    class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-                >
-                    Go to Dashboard
-                    <ArrowRight class="h-5 w-5" />
-                </Link>
-                <Link
-                    v-else
-                    :href="canRegister ? register().url : '#waitlist'"
+                <a
+                    href="#newsletter"
                     class="inline-flex items-center justify-center gap-2 rounded-md bg-primary px-6 py-3.5 text-base font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                     Join the Waitlist
                     <ArrowRight class="h-5 w-5" />
-                </Link>
+                </a>
                 <a
                     href="#features"
                     class="inline-flex items-center justify-center gap-2 rounded-md border border-border bg-secondary px-6 py-3.5 text-base font-medium text-secondary-foreground transition-colors hover:bg-secondary/80"
