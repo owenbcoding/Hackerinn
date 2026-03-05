@@ -4,7 +4,6 @@ import LandingNavbar from '@/components/landing/Navbar.vue';
 import LandingHero from '@/components/landing/Hero.vue';
 import LandingFeatures from '@/components/landing/Features.vue';
 import LandingProcess from '@/components/landing/Process.vue';
-import LandingTestimonials from '@/components/landing/Testimonials.vue';
 import LandingCTA from '@/components/landing/CTA.vue';
 import LandingFooter from '@/components/landing/Footer.vue';
 
@@ -34,7 +33,6 @@ const auth = page.props.auth as { user?: unknown } | undefined;
             <LandingHero :auth="auth" :can-register="canRegister" />
             <LandingFeatures />
             <LandingProcess />
-            <LandingTestimonials />
             <LandingCTA />
         </main>
         <LandingFooter />
